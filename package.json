@@ -1,0 +1,7 @@
+{
+  "name": "home-renovation-ae",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site ready in /site'"
+  }
+}
