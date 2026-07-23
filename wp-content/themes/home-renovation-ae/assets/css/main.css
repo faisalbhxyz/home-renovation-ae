@@ -599,17 +599,23 @@ h1, h2, h3 {
   margin-bottom: 1rem;
   filter: brightness(0) invert(1);
 }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+  margin-top: 1.1rem;
+}
 .social-link {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  margin-top: 1.1rem;
+  margin-top: 0;
   color: rgba(243, 238, 230, 0.78);
   font-size: 0.92rem;
   font-weight: 500;
   transition: color 0.2s var(--ease), transform 0.2s var(--ease);
 }
-.social-link .instagram-logo {
+.social-link .social-logo {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
@@ -620,7 +626,7 @@ h1, h2, h3 {
   color: var(--gold-bright);
   transform: translateY(-1px);
 }
-.social-link:hover .instagram-logo {
+.social-link:hover .social-logo {
   filter: brightness(1.08);
 }
 .footer-bottom {
