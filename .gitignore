@@ -1,0 +1,54 @@
+# WordPress core (keep local Studio runtime out of noise if regenerated)
+# Track theme + uploads + config that matters for this client site.
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+
+# PHP / Composer
+/vendor/
+composer.lock
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Env / secrets
+.env
+.env.*
+wp-cli.local.yml
+
+# Debug
+wp-content/debug.log
+wp-content/uploads/wc-logs/
+wp-content/uploads/woocommerce_transient_files/
+
+# Cache / temp
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade-temp-backup/
+
+# Plugins we did not customize (keep Akismet default optional)
+# Track custom theme fully
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+
+# SQLite / local DB dumps (Studio manages DB separately)
+*.sqlite
+*.sql
+wp-content/database/*.sqlite
+
+# PHP unit / tests
+.phpunit.result.cache
+
+# Local secrets
+wp-config.php
