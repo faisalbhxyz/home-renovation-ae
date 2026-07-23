@@ -7,10 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'HRA_VERSION', '1.1.1' );
+define( 'HRA_VERSION', '1.1.2' );
 define( 'HRA_PHONE', '+971562889635' );
 define( 'HRA_PHONE_DISPLAY', '+971 56 288 9635' );
 define( 'HRA_WHATSAPP', '971562889635' );
+define( 'HRA_INSTAGRAM', 'https://www.instagram.com/home_decor_dubai_/' );
 
 require_once get_template_directory() . '/inc/helpers.php';
 
@@ -87,6 +88,7 @@ add_action( 'wp_head', function () {
 			'addressCountry'  => 'AE',
 		),
 		'priceRange'  => '$$',
+		'sameAs'      => array( HRA_INSTAGRAM ),
 		'contactPoint'=> array(
 			'@type'             => 'ContactPoint',
 			'telephone'         => HRA_PHONE_DISPLAY,
