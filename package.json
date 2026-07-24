@@ -2,6 +2,11 @@
   "name": "home-renovation-ae",
   "private": true,
   "scripts": {
-    "build": "echo 'Static site ready in /site'"
+    "build": "echo 'Static site ready in /site'",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.114.0"
   }
 }
