@@ -106,7 +106,7 @@ h1, h2, h3 {
 }
 .nav-desktop a {
   font-size: 0.92rem;
-  font-weight: 450;
+  font-weight: 400;
   color: rgba(243, 238, 230, 0.82);
   transition: color 0.2s;
 }
@@ -193,7 +193,7 @@ h1, h2, h3 {
 .text-link {
   color: var(--gold);
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.03em;
 }
 .text-link:hover { color: var(--gold-bright); }
@@ -211,7 +211,10 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   background:
-    var(--hero-image, none) center / cover no-repeat,
+    image-set(
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.webp") type("image/webp"),
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.jpg") type("image/jpeg")
+    ) center / cover no-repeat,
     linear-gradient(135deg, #1c1916, #2a2420);
   transform: scale(1.04);
   animation: heroZoom 18s var(--ease) infinite alternate;
@@ -612,7 +615,7 @@ h1, h2, h3 {
   margin-top: 0;
   color: rgba(243, 238, 230, 0.78);
   font-size: 0.92rem;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 .social-link .social-logo {
@@ -652,7 +655,7 @@ h1, h2, h3 {
   color: #053b1d;
   padding: 0.75rem 1rem;
   border-radius: 999px;
-  font-weight: 650;
+  font-weight: 600;
   font-size: 0.88rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   animation: floatIn 0.8s var(--ease) 1.2s both;
@@ -703,4 +706,138 @@ h1, h2, h3 {
   .whatsapp-float span { display: none; }
   .whatsapp-float { width: 56px; height: 56px; justify-content: center; padding: 0; border-radius: 50%; }
   .brand-logo { height: 40px; }
+}
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; max-width: 820px; margin: 0 auto; }
+.faq-item {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  padding: 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 1.02rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--gold);
+  font-weight: 400;
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p {
+  margin: 0;
+  padding: 0 1.25rem 1.2rem;
+  color: rgba(243, 238, 230, 0.72);
+  line-height: 1.7;
+}
+
+/* Service / page hero */
+.page-hero {
+  position: relative;
+  min-height: 52vh;
+  display: grid;
+  align-items: end;
+  padding: 7rem 0 3.5rem;
+  background:
+    linear-gradient(180deg, rgba(12,11,10,0.55), rgba(12,11,10,0.88)),
+    var(--hero-image, none) center/cover no-repeat;
+}
+.page-hero-veil { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,11,10,0.72), transparent 70%); pointer-events: none; }
+.page-hero-content { position: relative; z-index: 1; max-width: 760px; }
+.breadcrumbs {
+  display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+  font-size: 0.85rem; color: rgba(243,238,230,0.6); margin-bottom: 1rem;
+}
+.breadcrumbs a { color: var(--gold-bright); }
+.service-detail-grid {
+  display: grid; gap: 2rem;
+}
+.service-detail-copy p { color: rgba(243,238,230,0.78); line-height: 1.75; margin-bottom: 1rem; }
+.service-bullets { margin: 1.5rem 0 2rem; padding: 0; list-style: none; }
+.service-bullets li {
+  position: relative; padding: 0.55rem 0 0.55rem 1.4rem;
+  color: rgba(243,238,230,0.8); border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.service-bullets li::before {
+  content: ""; position: absolute; left: 0; top: 1rem;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+}
+.service-aside {
+  padding: 1.5rem; border: 1px solid var(--line); background: rgba(255,255,255,0.02);
+  height: fit-content;
+}
+.service-aside h2 { font-size: 1.05rem; color: var(--gold); margin-bottom: 1rem; }
+.service-aside li + li { margin-top: 0.5rem; }
+.service-aside a { color: rgba(243,238,230,0.8); }
+.service-aside a:hover { color: var(--gold-bright); }
+.service-aside-note { margin-top: 1.25rem; font-size: 0.9rem; color: rgba(243,238,230,0.55); }
+.sitemap-list { max-width: 640px; }
+.sitemap-list li { margin: 0.65rem 0; }
+.sitemap-list a { color: var(--gold-bright); font-size: 1.05rem; }
+.service-card h3 a { color: inherit; text-decoration: none; }
+.service-card h3 a:hover { color: var(--gold-bright); }
+
+@media (min-width: 860px) {
+  .service-detail-grid { grid-template-columns: 1.6fr 0.9fr; align-items: start; }
+}
+
+
+/* Performance: WebP hero + mid-cta backgrounds */
+.hero-media {
+  background-image:
+    image-set(
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.webp") type("image/webp"),
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.jpg") type("image/jpeg")
+    ) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+.mid-cta {
+  --mid-image: none;
+  background-image:
+    linear-gradient(180deg, rgba(12,11,10,0.55), rgba(12,11,10,0.88)),
+    image-set(
+      url("/images/arched-media-wall-living-room-dubai.webp") type("image/webp"),
+      url("/images/arched-media-wall-living-room-dubai.jpg") type("image/jpeg")
+    ) !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.page-hero {
+  background-image:
+    linear-gradient(180deg, rgba(12,11,10,0.55), rgba(12,11,10,0.88)),
+    image-set(
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.webp") type("image/webp"),
+      url("/images/luxury-marble-tv-feature-wall-dubai-hero.jpg") type("image/jpeg")
+    ) !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.services, .portfolio, .process, .about, .why, .faq, .service-detail {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+img, picture { max-width: 100%; height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media,
+  .hero-scroll,
+  .whatsapp-float,
+  .hero .reveal {
+    animation: none !important;
+  }
+  .hero-media { transform: none; }
+}
+
+/* Keep continuous zoom off on small screens for smoother mobile LCP/INP */
+@media (max-width: 859px) {
+  .hero-media { animation: none; transform: none; }
 }

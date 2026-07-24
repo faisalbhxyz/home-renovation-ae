@@ -4,11 +4,12 @@
  */
 get_header();
 
-$hero     = hra_get_image_url( 'hero' );
-$about    = hra_get_image_url( 'about' );
-$cta_bg   = hra_get_image_url( 'cta' );
+$hero      = hra_get_image_url( 'hero' );
+$about     = hra_get_image_url( 'about' );
+$cta_bg    = hra_get_image_url( 'cta' );
 $portfolio = hra_get_portfolio_images();
 $services  = hra_services();
+$faqs      = hra_faqs();
 ?>
 
 <main id="main">
@@ -17,14 +18,13 @@ $services  = hra_services();
 		<div class="hero-veil"></div>
 		<div class="container hero-content">
 			<p class="brand-mark reveal">Home Renovation AE</p>
-			<h1 class="reveal delay-1">Dubai homes, elevated with quiet luxury</h1>
+			<h1 class="reveal delay-1">Home Renovation Dubai — luxury interiors, finished with care</h1>
 			<p class="hero-lead reveal delay-2">End-to-end décor, painting, flooring, furniture, curtains and office interiors — designed for Dubai living and delivered with precision.</p>
 			<div class="hero-cta reveal delay-3">
 				<a class="btn btn-gold btn-lg" href="<?php echo esc_url( hra_whatsapp_url() ); ?>" target="_blank" rel="noopener">Request Free Quote</a>
 				<a class="btn btn-outline-light btn-lg" href="#portfolio">View Portfolio</a>
 			</div>
 		</div>
-		<div class="hero-scroll" aria-hidden="true"><span></span></div>
 	</section>
 
 	<section class="trust-strip">
@@ -49,9 +49,9 @@ $services  = hra_services();
 						<div class="service-icon" aria-hidden="true">
 							<?php echo hra_service_icon( $service['icon'] ); // phpcs:ignore ?>
 						</div>
-						<h3><?php echo esc_html( $service['title'] ); ?></h3>
+						<h3><a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"><?php echo esc_html( $service['title'] ); ?></a></h3>
 						<p><?php echo esc_html( $service['text'] ); ?></p>
-						<a class="text-link" href="<?php echo esc_url( hra_whatsapp_url( 'Hi, I am interested in your ' . $service['title'] . ' service in Dubai.' ) ); ?>" target="_blank" rel="noopener">Get quote →</a>
+						<a class="text-link" href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>">Learn more →</a>
 					</article>
 				<?php endforeach; ?>
 			</div>
@@ -68,7 +68,7 @@ $services  = hra_services();
 			<div class="portfolio-grid">
 				<?php foreach ( $portfolio as $i => $item ) : ?>
 					<figure class="portfolio-item reveal <?php echo $i < 2 ? 'wide' : ''; ?>" style="--i:<?php echo (int) $i; ?>">
-						<img src="<?php echo esc_url( $item['url'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" loading="<?php echo $i < 3 ? 'eager' : 'lazy'; ?>" decoding="async">
+						<img src="<?php echo esc_url( $item['url'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" title="<?php echo esc_attr( $item['title'] . ' — Home Renovation AE Dubai' ); ?>" loading="<?php echo $i < 3 ? 'eager' : 'lazy'; ?>" decoding="async" width="<?php echo (int) $item['width']; ?>" height="<?php echo (int) $item['height']; ?>">
 						<figcaption>
 							<span><?php echo esc_html( $item['title'] ); ?></span>
 							<em>Dubai · Home Renovation AE</em>
@@ -111,7 +111,7 @@ $services  = hra_services();
 		<div class="container about-grid">
 			<div class="about-media reveal">
 				<?php if ( $about ) : ?>
-					<img src="<?php echo esc_url( $about ); ?>" alt="Luxury interior by Home Renovation AE in Dubai" loading="lazy" decoding="async">
+					<img src="<?php echo esc_url( $about ); ?>" alt="Luxury living room with modular sofa and stone wood TV wall — furniture & décor Dubai by Home Renovation AE" title="Luxury Living Room Interior Design Dubai" loading="lazy" decoding="async" width="1536" height="1024">
 				<?php endif; ?>
 			</div>
 			<div class="about-copy reveal">
@@ -135,6 +135,24 @@ $services  = hra_services();
 				<article class="reveal"><h3>One accountable team</h3><p>Décor, paint, floors, furniture and curtains coordinated together.</p></article>
 				<article class="reveal"><h3>Fast Dubai response</h3><p>WhatsApp-first communication for busy homeowners and offices.</p></article>
 				<article class="reveal"><h3>Detail-obsessed finish</h3><p>Edges, lighting, textiles and styling that make spaces feel complete.</p></article>
+			</div>
+		</div>
+	</section>
+
+	<section class="section faq" id="faq">
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">FAQ</p>
+				<h2>Home renovation in Dubai — common questions</h2>
+				<p>Straight answers for homeowners and offices planning décor, painting, flooring and fit-out.</p>
+			</div>
+			<div class="faq-list">
+				<?php foreach ( $faqs as $faq ) : ?>
+					<details class="faq-item reveal">
+						<summary><?php echo esc_html( $faq['q'] ); ?></summary>
+						<p><?php echo esc_html( $faq['a'] ); ?></p>
+					</details>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

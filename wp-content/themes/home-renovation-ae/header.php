@@ -25,11 +25,11 @@
 		</a>
 
 		<nav class="nav-desktop" aria-label="Primary">
-			<a href="#services">Services</a>
-			<a href="#portfolio">Portfolio</a>
-			<a href="#process">Process</a>
-			<a href="#about">About</a>
-			<a href="#contact">Contact</a>
+			<a href="<?php echo esc_url( home_url( '/#services' ) ); ?>">Services</a>
+			<a href="<?php echo esc_url( home_url( '/#portfolio' ) ); ?>">Portfolio</a>
+			<a href="<?php echo esc_url( home_url( '/#process' ) ); ?>">Process</a>
+			<a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">About</a>
+			<a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Contact</a>
 		</nav>
 
 		<div class="header-actions">
@@ -42,11 +42,11 @@
 	</div>
 
 	<div class="mobile-nav" id="mobile-nav" hidden>
-		<a href="#services">Services</a>
-		<a href="#portfolio">Portfolio</a>
-		<a href="#process">Process</a>
-		<a href="#about">About</a>
-		<a href="#contact">Contact</a>
+		<a href="<?php echo esc_url( home_url( '/#services' ) ); ?>">Services</a>
+		<a href="<?php echo esc_url( home_url( '/#portfolio' ) ); ?>">Portfolio</a>
+		<a href="<?php echo esc_url( home_url( '/#process' ) ); ?>">Process</a>
+		<a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">About</a>
+		<a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Contact</a>
 		<a class="btn btn-gold" href="<?php echo esc_url( hra_whatsapp_url() ); ?>" target="_blank" rel="noopener">WhatsApp Free Quote</a>
 		<a class="btn btn-outline" href="<?php echo esc_url( hra_phone_url() ); ?>"><?php echo esc_html( HRA_PHONE_DISPLAY ); ?></a>
 	</div>

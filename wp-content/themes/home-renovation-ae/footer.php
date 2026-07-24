@@ -52,16 +52,17 @@
 				<h3>Services</h3>
 				<ul>
 					<?php foreach ( hra_services() as $service ) : ?>
-						<li><a href="#services"><?php echo esc_html( $service['title'] ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"><?php echo esc_html( $service['title'] ); ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
 			<div>
 				<h3>Explore</h3>
 				<ul>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#process">Our Process</a></li>
-					<li><a href="#about">About</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#portfolio' ) ); ?>">Portfolio</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#process' ) ); ?>">Our Process</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">About</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>">FAQ</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/sitemap/' ) ); ?>">HTML Sitemap</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/wp-sitemap.xml' ) ); ?>">XML Sitemap</a></li>
 				</ul>
@@ -80,7 +81,6 @@
 		</div>
 		<div class="container footer-bottom">
 			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Home Renovation AE. All rights reserved.</p>
-			<p>Dubai · Home Renovation · Interior Décor · Fit-Out</p>
 		</div>
 	</div>
 </footer>

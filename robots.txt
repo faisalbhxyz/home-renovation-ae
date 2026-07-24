@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
 
-Sitemap: http://localhost:8881/wp-sitemap.xml
+Sitemap: https://homerenovationae.com/sitemap.xml
+Sitemap: https://homerenovationae.com/wp-sitemap.xml

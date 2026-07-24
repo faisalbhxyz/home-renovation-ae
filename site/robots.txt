@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://home-renovation-ae.vercel.app/sitemap.xml
+Sitemap: https://homerenovationae.com/sitemap.xml

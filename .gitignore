@@ -52,3 +52,4 @@ wp-content/database/*.sqlite
 
 # Local secrets
 wp-config.php
+.vercel
