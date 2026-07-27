@@ -100,9 +100,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="container flex flex-col gap-3 border-t border-[rgba(196,165,116,0.12)] py-6 text-sm text-cream/55 md:flex-row md:items-center md:justify-between">
+        <div className="container flex flex-col gap-2 border-t border-[rgba(196,165,116,0.12)] py-6 text-sm text-cream/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Home Renovation AE. All rights reserved.</p>
-          <p>Home renovation & interior décor across Dubai</p>
+          <a
+            href="https://wa.me/8801310790697"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold"
+          >
+            Developed by Adstryker
+          </a>
         </div>
       </footer>
 
