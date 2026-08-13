@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Home Renovation AE
 
-## Getting Started
+Marketing site for **Home Renovation AE**, a Dubai studio for luxury home renovation and interior décor.
 
-First, run the development server:
+**Production:** [homerenovationae.com](https://homerenovationae.com)
+
+## Stack
+
+- [Next.js](https://nextjs.org/) 16 (App Router) and React 19
+- TypeScript (strict)
+- Tailwind CSS 4
+- Deployed on [Vercel](https://vercel.com)
+
+## Requirements
+
+- Node.js 22 (see `.nvmrc`)
+- npm 10+
+
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript (`tsc --noEmit`) |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/app/            Pages, metadata, sitemap, robots
+src/components/     Shared Header and Footer
+src/data/           Blog posts
+src/lib/            JSON-LD and date helpers
+public/images/      Portfolio and brand assets (WebP / JPEG)
+```
 
-To learn more about Next.js, take a look at the following resources:
+Service landing pages live under `src/app/[slug]/page.tsx`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/home-decorations-dubai`
+- `/painting-dubai`
+- `/furniture-dubai`
+- `/flooring-dubai`
+- `/curtains-dubai`
+- `/office-decorations-dubai`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Vercel builds from the `main` branch. After changing environment variables, trigger a new deployment — `NEXT_PUBLIC_*` values are baked in at build time.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The previous WordPress export is preserved on the `archive/wordpress` branch and is not part of the live app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Proprietary. See [LICENSE](LICENSE).
